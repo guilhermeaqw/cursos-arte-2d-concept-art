@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guinogue — Cursos de Arte 2D, Concept Art & Fundamentos do Desenho</title>
+  <meta name="description" content="Domine Concept Art para Jogos 2D, Fundamentos do Desenho e Pintura Digital de Olhos e Retratos com Guilherme Nogueira (Guinogue). Cursos oficiais na Udemy.">
+  <meta name="keywords" content="curso de desenho, concept art para jogos 2d, pintura digital, fundamentos do desenho, como desenhar olhos, guilherme nogueira, guinogue, arte 2d para games, criação de personagens">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guinogue-cursos.netlify.app/">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Guinogue — Domine a Arte 2D & Concept Art">
+  <meta property="og:description" content="Treinamentos oficiais de Concept Art para Jogos 2D, Fundamentos do Desenho e Pintura Digital por Guilherme Nogueira.">
+  <meta property="og:image" content="https://img-c.udemycdn.com/course/750x422/6973899_0ed2.jpg">
+
+  <!-- Google Fonts: Anton (Display Bold igual referência) + Plus Jakarta Sans (Clean UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Schema.org JSON-LD (SEO Invisível para o Google ranquear os 3 cursos com estrelas) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Course",
+          "name": "Desenho para Jogos 2D: Introdução ao Concept Art",
+          "description": "Técnicas essenciais de desenho, pintura digital, personagens, cenários e props para jogos 2D.",
+          "image": "https://img-c.udemycdn.com/course/750x422/6973899_0ed2.jpg",
+          "url": "https://www.udemy.com/course/desenho-para-jogos-2d-introducao-ao-concept-art/?referralCode=41B40BCAED5E0554F3B7",
+          "provider": {
+            "@type": "Person",
+            "name": "Guilherme Nogueira"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "bestRating": "5",
+            "ratingCount": "85"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Course",
+          "name": "Como Desenhar e Pintar Olhos (Iniciante ao Profissional)",
+          "description": "Planos da face, proporção, valores tonais, luz, sombra e pintura digital e tradicional de olhos.",
+          "image": "https://img-c.udemycdn.com/course/750x422/5226004_958c_2.jpg",
+          "url": "https://www.udemy.com/course/como-desenhar-e-pintar-olhos-iniciante-ao-profissional/?referralCode=8FDB8B4F8257C7D2E26C",
+          "provider": {
+            "@type": "Person",
+            "name": "Guilherme Nogueira"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "bestRating": "5",
+            "ratingCount": "45"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Course",
+          "name": "Os Fundamentos do Desenho (Para todos os estilos de desenho)",
+          "description": "Perspectiva, luz e sombra, anatomia, desenho gestual, composição e biblioteca visual para todos os estilos.",
+          "image": "https://img-c.udemycdn.com/course/750x422/4197664_b5a6.jpg",
+          "url": "https://www.udemy.com/course/os-fundamentos-do-desenho-para-todos-os-estilos-de-desenho/?referralCode=793A174C6B571BC4CF95",
+          "provider": {
+            "@type": "Person",
+            "name": "Guilherme Nogueira"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "bestRating": "5",
+            "ratingCount": "120"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --green-bg: #203528;
+      --green-deep: #18291e;
+      --lime: #9ef01a;
+      --lime-hover: #b2ff2e;
+      --white: #ffffff;
+      --offwhite: #f7f8f6;
+      --dark: #111814;
+      --muted: #5c6b62;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--white);
+      color: var(--dark);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ==================== HERO (INSPIRADO NA REFERÊNCIA) ==================== */
+    .hero {
+      position: relative;
+      background: radial-gradient(circle at 50% 42%, #294434 0%, var(--green-bg) 55%, var(--green-deep) 100%);
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      padding-bottom: 90px;
+    }
+
+    /* Padrão sutil geométrico de fundo igual à referência */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1.5px, transparent 1.5px);
+      background-size: 56px 56px;
+      pointer-events: none;
+    }
+
+    /* Navbar Minimalista */
+    .navbar {
+      position: relative;
+      z-index: 20;
+      max-width: 1320px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 42px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.85);
+      color: #fff;
+      font-family: 'Anton', sans-serif;
+      font-size: 1.45rem;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      position: relative;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.06);
+      border-color: var(--lime);
+      color: var(--lime);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--lime);
+    }
+
+    .menu-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 48px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .menu-lines span {
+      display: block;
+      height: 1.5px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      transition: background 0.2s;
+    }
+
+    .menu-lines:hover span {
+      background: var(--lime);
+    }
+
+    /* Palco Central do Hero */
+    .hero-stage {
+      position: relative;
+      z-index: 10;
+      max-width: 1280px;
+      width: 100%;
+      margin: auto;
+      padding: 20px 24px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Tipografia Gigante de Fundo */
+    .giant-title {
+      font-family: 'Anton', Impact, sans-serif;
+      color: var(--white);
+      text-transform: uppercase;
+      text-align: center;
+      font-size: clamp(4.2rem, 13.2vw, 11.4rem);
+      line-height: 0.88;
+      letter-spacing: -0.015em;
+      user-select: none;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    .giant-title .line-1 {
+      display: block;
+    }
+
+    .giant-title .line-2 {
+      display: block;
+      margin-top: 6px;
+    }
+
+    /* Composição de Cards Flutuantes sobrepostos ao texto gigante */
+    .floating-showcase {
+      position: relative;
+      width: 100%;
+      max-width: 1020px;
+      height: 370px;
+      margin-top: -250px;
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Card Central Principal (Destaque) */
+    .main-piece {
+      position: relative;
+      width: 420px;
+      border-radius: 26px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 38px 75px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(158, 240, 26, 0.2);
+      transform: rotate(-5deg);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      color: #fff;
+      z-index: 5;
+    }
+
+    .main-piece:hover {
+      transform: rotate(0deg) translateY(-10px) scale(1.03);
+      border-color: var(--lime);
+      box-shadow: 0 45px 90px rgba(0, 0, 0, 0.65), 0 0 35px rgba(158, 240, 26, 0.3);
+    }
+
+    .main-piece img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+    }
+
+    .main-piece-meta {
+      padding: 12px 10px 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Cards Laterais Flutuantes (Estilo Glassmorphic igual à referência) */
+    .side-float {
+      position: absolute;
+      width: 225px;
+      border-radius: 20px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.42);
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 7;
+    }
+
+    .side-float img {
+      width: 100%;
+      height: 124px;
+      object-fit: cover;
+      border-radius: 13px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .side-float.left-card {
+      left: 6%;
+      bottom: 8px;
+      transform: rotate(-15deg);
+      background: rgba(45, 65, 53, 0.68);
+    }
+
+    .side-float.left-card:hover {
+      transform: rotate(-4deg) translateY(-8px) scale(1.06);
+      border-color: var(--lime);
+    }
+
+    .side-float.right-card {
+      right: 7%;
+      top: -22px;
+      transform: rotate(14deg);
+      background: rgba(235, 242, 238, 0.85);
+      color: #111814;
+    }
+
+    .side-float.right-card:hover {
+      transform: rotate(4deg) translateY(-8px) scale(1.06);
+      border-color: var(--lime);
+    }
+
+    .float-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.7;
+      display: block;
+    }
+
+    .float-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 2px 0;
+      display: block;
+    }
+
+    .float-sub {
+      font-size: 0.74rem;
+      opacity: 0.78;
+      display: block;
+    }
+
+    .lime-dot {
+      display: inline-block;
+      background: var(--lime);
+      color: #111814;
+      font-weight: 800;
+      font-size: 0.74rem;
+      padding: 4px 10px;
+      border-radius: 99px;
+    }
+
+    /* Setas Neon desenhadas à mão (idênticas à referência) */
+    .scribble-left {
+      position: absolute;
+      left: 14%;
+      top: -148px;
+      width: 124px;
+      z-index: 8;
+      pointer-events: none;
+    }
+
+    .scribble-right {
+      position: absolute;
+      right: 14%;
+      bottom: 24px;
+      width: 110px;
+      z-index: 8;
+      pointer-events: none;
+    }
+
+    /* Botão Pill Verde-Limão na base do Hero (idêntico ao Explore | M1 PRO) */
+    .explore-pill {
+      margin-top: 26px;
+      display: inline-flex;
+      align-items: center;
+      background: var(--lime);
+      padding: 6px 6px 6px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #0f1712;
+      font-weight: 700;
+      font-size: 0.92rem;
+      gap: 14px;
+      box-shadow: 0 12px 30px rgba(158, 240, 26, 0.28);
+      transition: transform 0.2s ease, background 0.2s ease;
+      position: relative;
+      z-index: 10;
+    }
+
+    .explore-pill:hover {
+      transform: translateY(-3px) scale(1.03);
+      background: var(--lime-hover);
+    }
+
+    .explore-pill .inner-white {
+      background: var(--white);
+      color: #0f1712;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* Recorte Poligonal Branco na base do Hero (idêntico à referência) */
+    .jagged-divider {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 76px;
+      z-index: 12;
+      pointer-events: none;
+    }
+
+    /* ==================== SEÇÃO CLEAN DE CURSOS ==================== */
+    .courses-section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 64px 32px 96px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 44px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .section-header h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      line-height: 1;
+      color: var(--dark);
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 420px;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .course-item {
+      background: var(--offwhite);
+      border-radius: 24px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .course-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 48px rgba(24, 41, 30, 0.1);
+      border-color: rgba(32, 53, 40, 0.2);
+    }
+
+    .thumb-wrap {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      margin-bottom: 18px;
+      background: #111;
+    }
+
+    .thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .course-item:hover .thumb-wrap img {
+      transform: scale(1.05);
+    }
+
+    .badge-top {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(17, 24, 20, 0.82);
+      backdrop-filter: blur(8px);
+      color: var(--lime);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      border-radius: 99px;
+    }
+
+    .rating-pill {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.94);
+      color: #111814;
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 99px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    }
+
+    .course-body {
+      padding: 4px 10px 10px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .course-body h3 {
+      font-size: 1.22rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    .course-body p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 22px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid rgba(0,0,0,0.07);
+    }
+
+    .platform-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .cta-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-bg);
+      color: var(--white);
+      padding: 10px 18px;
+      border-radius: 99px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .course-item:hover .cta-arrow {
+      background: var(--lime);
+      color: var(--dark);
+    }
+
+    /* Rodapé Ultra-Clean */
+    footer {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 32px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 960px) {
+      .floating-showcase {
+        margin-top: -80px;
+        height: auto;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .side-float {
+        position: relative;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        width: 300px;
+        transform: none !important;
+      }
+      .main-piece {
+        width: 100%;
+        max-width: 360px;
+        transform: none;
+      }
+      .scribble-left, .scribble-right {
+        display: none;
+      }
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <header class="hero">
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="#" class="logo" aria-label="Guinogue">G</a>
+        <ul class="nav-links">
+          <li><a href="#cursos">Cursos</a></li>
+          <li><a href="https://www.udemy.com/course/desenho-para-jogos-2d-introducao-ao-concept-art/?referralCode=41B40BCAED5E0554F3B7" target="_blank" rel="noopener">Concept Art</a></li>
+          <li><a href="https://www.udemy.com/course/os-fundamentos-do-desenho-para-todos-os-estilos-de-desenho/?referralCode=793A174C6B571BC4CF95" target="_blank" rel="noopener">Fundamentos</a></li>
+        </ul>
+      </div>
+      <a href="#cursos" class="menu-lines" aria-label="Ver cursos">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </nav>
+
+    <div class="hero-stage">
+      <h1 class="giant-title">
+        <span class="line-1">ARTE 2D &amp;</span>
+        <span class="line-2">CONCEPT ART</span>
+      </h1>
+
+      <div class="floating-showcase">
+        <!-- Seta Neon Esquerda (idêntica à referência) -->
+        <svg class="scribble-left" viewBox="0 0 140 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 82C32 42 66 12 72 26C78 40 36 86 46 94C56 102 98 68 122 62M122 62L104 52M122 62L110 80" stroke="#9ef01a" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <!-- Card Flutuante Esquerdo: Fundamentos do Desenho -->
+        <a href="https://www.udemy.com/course/os-fundamentos-do-desenho-para-todos-os-estilos-de-desenho/?referralCode=793A174C6B571BC4CF95" target="_blank" rel="noopener" class="side-float left-card">
+          <img src="https://img-c.udemycdn.com/course/750x422/4197664_b5a6.jpg" alt="Os fundamentos do desenho (Para todos os estilos de desenho)">
+          <span class="float-tag">BASE TÉCNICA</span>
+          <span class="float-title">Fundamentos 2D</span>
+          <span class="float-sub">Todos os estilos</span>
+        </a>
+
+        <!-- Peça Central Principal: Concept Art Jogos 2D -->
+        <a href="https://www.udemy.com/course/desenho-para-jogos-2d-introducao-ao-concept-art/?referralCode=41B40BCAED5E0554F3B7" target="_blank" rel="noopener" class="main-piece">
+          <img src="https://img-c.udemycdn.com/course/750x422/6973899_0ed2.jpg" alt="Desenho para Jogos 2D: Introdução ao Concept Art">
+          <div class="main-piece-meta">
+            <div>
+              <span class="float-tag">DESTAQUE • GAMES 2D</span>
+              <span class="float-title" style="font-size:1.1rem;">Introdução ao Concept Art</span>
+            </div>
+            <span class="lime-dot">★ 4.7</span>
+          </div>
+        </a>
+
+        <!-- Card Flutuante Direito: Desenhar e Pintar Olhos -->
+        <a href="https://www.udemy.com/course/como-desenhar-e-pintar-olhos-iniciante-ao-profissional/?referralCode=8FDB8B4F8257C7D2E26C" target="_blank" rel="noopener" class="side-float right-card">
+          <img src="https://img-c.udemycdn.com/course/750x422/5226004_958c_2.jpg" alt="Como desenhar e pintar Olhos (Iniciante ao profissional)">
+          <span class="float-tag">PINTURA & VALORES</span>
+          <span class="float-title">Olhos & Expressões</span>
+          <span class="float-sub">Nota 5.0 ★ na Udemy</span>
+        </a>
+
+        <!-- Seta Neon Direita (idêntica à referência) -->
+        <svg class="scribble-right" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M52 88C84 98 106 82 98 60C90 38 56 26 24 22M24 22L44 12M24 22L36 44" stroke="#9ef01a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Botão Pill Explorar -->
+      <a href="#cursos" class="explore-pill">
+        <span>» Explorar</span>
+        <span class="inner-white">3 CURSOS</span>
+      </a>
+    </div>
+
+    <!-- Divisor Poligonal Recortado Branco (idêntico à referência) -->
+    <svg class="jagged-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon fill="#ffffff" points="0,15 95,68 190,56 275,8 335,8 375,32 425,6 455,6 495,58 555,54 640,4 705,82 775,54 845,78 960,12 1035,10 1095,80 1165,48 1225,72 1280,46 1320,82 1440,36 1440,90 0,90"/>
+    </svg>
+  </header>
+
+  <!-- ==================== SHOWCASE DOS 3 CURSOS (CLEAN) ==================== -->
+  <section id="cursos" class="courses-section">
+    <div class="section-header">
+      <h2>ESCOLHA SEU TREINAMENTO</h2>
+      <p>Acesso vitalício, certificado oficial Udemy e suporte direto com Guilherme Nogueira.</p>
+    </div>
+
+    <div class="courses-grid">
+      <!-- Curso 1 -->
+      <a href="https://www.udemy.com/course/desenho-para-jogos-2d-introducao-ao-concept-art/?referralCode=41B40BCAED5E0554F3B7" target="_blank" rel="noopener" class="course-item">
+        <div>
+          <div class="thumb-wrap">
+            <img src="https://img-c.udemycdn.com/course/750x422/6973899_0ed2.jpg" alt="Desenho para Jogos 2D: Introdução ao Concept Art">
+            <span class="badge-top">Games 2D</span>
+            <span class="rating-pill">★ 4.7</span>
+          </div>
+          <div class="course-body">
+            <div>
+              <h3>Desenho para Jogos 2D: Introdução ao Concept Art</h3>
+              <p>Crie personagens, cenários e props para jogos 2D dominando forma, volume, luz e cor do zero ao portfólio.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="platform-tag">Udemy Oficial</span>
+          <span class="cta-arrow">Acessar Curso →</span>
+        </div>
+      </a>
+
+      <!-- Curso 2 -->
+      <a href="https://www.udemy.com/course/como-desenhar-e-pintar-olhos-iniciante-ao-profissional/?referralCode=8FDB8B4F8257C7D2E26C" target="_blank" rel="noopener" class="course-item">
+        <div>
+          <div class="thumb-wrap">
+            <img src="https://img-c.udemycdn.com/course/750x422/5226004_958c_2.jpg" alt="Como desenhar e pintar Olhos (Iniciante ao profissional)">
+            <span class="badge-top">Pintura & Rosto</span>
+            <span class="rating-pill">★ 5.0</span>
+          </div>
+          <div class="course-body">
+            <div>
+              <h3>Como Desenhar e Pintar Olhos (Iniciante ao Profissional)</h3>
+              <p>Planos da face, proporção, simplificação de valores e pintura passo a passo para estilos realistas e estilizados.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="platform-tag">Udemy Oficial</span>
+          <span class="cta-arrow">Acessar Curso →</span>
+        </div>
+      </a>
+
+      <!-- Curso 3 -->
+      <a href="https://www.udemy.com/course/os-fundamentos-do-desenho-para-todos-os-estilos-de-desenho/?referralCode=793A174C6B571BC4CF95" target="_blank" rel="noopener" class="course-item">
+        <div>
+          <div class="thumb-wrap">
+            <img src="https://img-c.udemycdn.com/course/750x422/4197664_b5a6.jpg" alt="Os fundamentos do desenho (Para todos os estilos de desenho)">
+            <span class="badge-top">Base Completa</span>
+            <span class="rating-pill">★ 4.6</span>
+          </div>
+          <div class="course-body">
+            <div>
+              <h3>Os Fundamentos do Desenho (Para Todos os Estilos)</h3>
+              <p>Perspectiva, luz e sombra, anatomia, desenho gestual e biblioteca visual para desenhar sem depender de cópias.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="platform-tag">Udemy Oficial</span>
+          <span class="cta-arrow">Acessar Curso →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Guilherme Nogueira (Guinogue)</span>
+    <span style="display:flex; gap:18px; flex-wrap:wrap;">
+      <a href="/concept-art-jogos-2d.html" style="color:inherit; text-decoration:none;">Concept Art 2D</a>
+      <a href="/como-desenhar-e-pintar-olhos.html" style="color:inherit; text-decoration:none;">Pintura de Olhos</a>
+      <a href="/fundamentos-do-desenho.html" style="color:inherit; text-decoration:none;">Fundamentos do Desenho</a>
+    </span>
+  </footer>
+
+</body>
+</html>
+
