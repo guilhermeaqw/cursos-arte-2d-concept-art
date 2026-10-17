@@ -821,6 +821,27 @@
     </div>
   </section>
 
+  <!-- ==================== DESAFIO INTERATIVO (CONVERSÃO AUTOMÁTICA) ==================== -->
+  <section style="max-width: 1240px; margin: 0 auto 88px; padding: 0 32px;">
+    <div style="background: radial-gradient(circle at 80% 20%, #294434 0%, #18291e 100%); border-radius: 28px; padding: 48px 40px; color: #fff; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 32px; position: relative; overflow: hidden;">
+      <div style="max-width: 580px; position: relative; z-index: 2;">
+        <span style="display: inline-block; background: rgba(158, 240, 26, 0.16); color: #9ef01a; border: 1px solid rgba(158, 240, 26, 0.4); font-size: 0.74rem; font-weight: 800; padding: 5px 12px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px;">⚡ Treino Prático Interativo</span>
+        <h2 style="font-family: 'Anton', sans-serif; font-size: clamp(2rem, 3.6vw, 2.8rem); text-transform: uppercase; line-height: 1.05; margin-bottom: 12px;">NÃO SABE O QUE TREINAR HOJE?</h2>
+        <p id="challenge-text" style="color: rgba(255,255,255,0.86); font-size: 1.05rem; min-height: 52px; margin-bottom: 22px;">Clique ao lado para sortear um exercício técnico de 15 minutos e ver qual curso domina essa técnica.</p>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+          <button onclick="nextChallenge()" style="background: #9ef01a; color: #0f1712; border: none; padding: 14px 26px; border-radius: 99px; font-weight: 800; font-size: 0.92rem; cursor: pointer; font-family: inherit; transition: transform 0.2s;">🎲 Gerar Desafio de 15 Min</button>
+          <a id="challenge-link" href="https://www.udemy.com/course/como-desenhar-e-pintar-olhos-iniciante-ao-profissional/?referralCode=8FDB8B4F8257C7D2E26C" target="_blank" rel="noopener" style="color: #9ef01a; font-weight: 700; font-size: 0.9rem; text-decoration: none; padding: 10px 6px;">Dominar esta técnica no curso →</a>
+        </div>
+      </div>
+      <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.22); border-radius: 22px; padding: 22px 26px; min-width: 280px; max-width: 340px;">
+        <span style="font-size: 0.72rem; font-weight: 800; color: #9ef01a; text-transform: uppercase; letter-spacing: 0.08em;">🔥 RECÉM-OTIMIZADO • NOTA 5.0 ★</span>
+        <h3 style="font-size: 1.15rem; font-weight: 800; margin: 6px 0 8px;">Como Desenhar e Pintar Olhos</h3>
+        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.78); margin-bottom: 16px;">Domine os planos da face, valores tonais e pintura digital ou tradicional do zero ao profissional.</p>
+        <a href="https://www.udemy.com/course/como-desenhar-e-pintar-olhos-iniciante-ao-profissional/?referralCode=8FDB8B4F8257C7D2E26C" target="_blank" rel="noopener" style="display: block; text-align: center; background: #fff; color: #111814; text-decoration: none; font-weight: 800; font-size: 0.85rem; padding: 11px 18px; border-radius: 99px;">Garantir Vaga com Desconto →</a>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <span>© 2026 Guilherme Nogueira (Guinogue)</span>
     <span style="display:flex; gap:18px; flex-wrap:wrap;">
@@ -829,6 +850,40 @@
       <a href="/fundamentos-do-desenho.html" style="color:inherit; text-decoration:none;">Fundamentos do Desenho</a>
     </span>
   </footer>
+
+  <script>
+    const challenges = [
+      {
+        text: "Desafio #1 (Planos & Olhar): Desenhe um olho em ângulo 3/4 marcando primeiro a esfera ocular e os 3 planos da pálpebra superior apenas em escala de cinza (3 valores).",
+        link: "https://www.udemy.com/course/como-desenhar-e-pintar-olhos-iniciante-ao-profissional/?referralCode=8FDB8B4F8257C7D2E26C",
+        cta: "Ver aula de Planos e Valores no Curso de Olhos →"
+      },
+      {
+        text: "Desafio #2 (Concept Art 2D): Crie 3 silhuetas totalmente pretas de um personagem pirata ou guerreiro usando apenas formas primárias (quadrado, círculo e triângulo).",
+        link: "https://www.udemy.com/course/desenho-para-jogos-2d-introducao-ao-concept-art/?referralCode=41B40BCAED5E0554F3B7",
+        cta: "Dominar criação de personagens no Curso de Concept Art →"
+      },
+      {
+        text: "Desafio #3 (Perspectiva & Volume): Desenhe 8 caixas rotacionadas em 2 pontos de fuga e esculpa um cilindro dentro de cada uma sem usar régua.",
+        link: "https://www.udemy.com/course/os-fundamentos-do-desenho-para-todos-os-estilos-de-desenho/?referralCode=793A174C6B571BC4CF95",
+        cta: "Dominar Perspectiva no Curso de Fundamentos →"
+      },
+      {
+        text: "Desafio #4 (Pintura e Brilho): Pinte uma íris tratando-a como um cone côncavo: escureça o topo sob a sombra da pálpebra e ilumine a base oposta antes de aplicar o highlight.",
+        link: "https://www.udemy.com/course/como-desenhar-e-pintar-olhos-iniciante-ao-profissional/?referralCode=8FDB8B4F8257C7D2E26C",
+        cta: "Aprender pintura completa no Curso de Olhos →"
+      }
+    ];
+    let idx = 0;
+    function nextChallenge() {
+      const c = challenges[idx % challenges.length];
+      document.getElementById('challenge-text').textContent = c.text;
+      const link = document.getElementById('challenge-link');
+      link.href = c.link;
+      link.textContent = c.cta;
+      idx++;
+    }
+  </script>
 
 </body>
 </html>
